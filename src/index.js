@@ -31,4 +31,4 @@ addTodoForm.addEventListener("submit", (e) => {
   }
 });
 
-app.addTodo("My first To-Do!", `Add more To-Dos to the list! 😜`);
+app.render();

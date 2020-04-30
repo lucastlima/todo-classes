@@ -90,6 +90,18 @@ $bg-gradient: repeating-linear-gradient(
       background-color: rgba(254, 254, 254, 0.6);
     }
   }
+  &-confirm {
+    display: flex;
+    flex: 0 1 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #50af00;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #61d402;
+    }
+  }
 
   &-remove {
     border-radius: 0 0.5rem 0.5rem 0;
@@ -112,7 +124,8 @@ $bg-gradient: repeating-linear-gradient(
   flex: 1;
   padding: 1rem 0;
 
-  & > input[type="text"] {
+  & #todoTitle,
+  #todoDueto {
     flex: 10;
     width: 100%;
     min-width: 0%;
@@ -169,4 +182,25 @@ $bg-gradient: repeating-linear-gradient(
       color: #242833;
     }
   }
+}
+
+.todo-editing-title {
+  width: 100%;
+  border: none;
+  background-color: rgba(254, 254, 254, 0.05);
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 2px;
+  outline: none;
+}
+
+.todo-editing-task {
+  width: 100%;
+  border: none;
+  background-color: rgba(254, 254, 254, 0.05);
+  resize: none;
+  font-size: 1rem;
+  color: white;
+  outline: none;
 }

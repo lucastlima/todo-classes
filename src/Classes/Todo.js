@@ -22,7 +22,7 @@ class Todo {
     body.classList.add("todo-body");
     body.innerHTML = `
     <h3 class="todo-title">${this.title}</h3>
-    <p>${this.task}</p>
+    <p class="todo-task">${this.task}</p>
     <p class="todo-created">Created on ${weekDay}, ${day} ${month} - ${hour}:${min}</p>
     `;
     //remove
@@ -45,6 +45,10 @@ class Todo {
 
   handleRemove = () => {
     TODOAPP.removeTodo(this.id);
+  };
+
+  handleEdit = () => {
+    TODOAPP.editTodo(this.id);
   };
 }
 
