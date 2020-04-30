@@ -2,18 +2,16 @@ import { v4 as uuid } from "uuid";
 import { handleDate } from "../utils/utils";
 
 class Todo {
-  #date;
   constructor(title, task, dueto) {
     this.id = uuid();
     this.title = title;
     this.task = task;
     this.dueto = dueto;
     this.createdAt = new Date().valueOf();
-    this.#date = handleDate(this.createdAt);
   }
 
   render() {
-    const { weekDay, month, hour, min, day } = this.#date;
+    const { weekDay, month, hour, min, day } = handleDate(this.createdAt);
     const todo = document.createElement("div");
     todo.classList.add("todo");
     todo.id = this.id;
