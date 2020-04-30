@@ -1,0 +1,172 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #242833;
+  color: #fefefe;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0.3rem 0;
+}
+
+$bg-gradient: repeating-linear-gradient(
+  45deg,
+  rgba(254, 254, 254, 0.25),
+  rgba(254, 254, 254, 0.25) 10px,
+  rgba(254, 254, 254, 0.2) 10px,
+  rgba(254, 254, 254, 0.2) 20px
+);
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 1200px;
+  height: 100%;
+  max-height: 90vh;
+  border: 2px solid #fefefe;
+  border-radius: 2rem;
+  padding: 2rem;
+
+  @media screen and (max-width: 1200px) {
+    flex: 0 1 90vw;
+  }
+}
+
+.container {
+  display: flex;
+  flex: 0 1 100%;
+  flex-direction: column;
+  margin-top: 1rem;
+  overflow-y: auto;
+}
+
+.todo {
+  display: flex;
+  flex: 0 1 4rem;
+  margin-bottom: 0.5rem;
+
+  &-body {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background: $bg-gradient;
+    word-break: break-all;
+  }
+
+  &-remove,
+  &-edit {
+    display: flex;
+    flex: 0 1 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(254, 254, 254, 0.4);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(254, 254, 254, 0.6);
+    }
+  }
+
+  &-remove {
+    border-radius: 0 0.5rem 0.5rem 0;
+    background-color: rgba(254, 254, 254, 0.35);
+  }
+
+  &-title {
+    color: white;
+  }
+
+  &-created {
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
+#todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 1rem 0;
+
+  & > input[type="text"] {
+    flex: 10;
+    width: 100%;
+    min-width: 0%;
+    border-radius: 0.5rem;
+    line-height: 2rem;
+    border: solid 2px #fefefe;
+    background-color: transparent;
+    outline: none;
+    color: #fefefe;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+
+    &:first-of-type {
+      margin-right: 0.5rem;
+    }
+  }
+
+  & > textarea {
+    flex: 1 100%;
+    border: none;
+    background-color: transparent;
+    border: solid 2px #fefefe;
+    color: inherit;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    resize: none;
+    font-family: inherit;
+    margin: 0.5rem 0;
+    font-size: 16px;
+  }
+
+  & > button {
+    flex: 1;
+    border: solid 2px #fefefe;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    outline: none;
+    padding: 0.5rem 0;
+    background-color: rgba(254, 254, 254, 0.2);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(254, 254, 254, 0.6);
+      color: #242833;
+    }
+    &:active {
+      background-color: rgba(254, 254, 254, 0.8);
+      transform: scale(0.98);
+      color: #242833;
+    }
+  }
+}
